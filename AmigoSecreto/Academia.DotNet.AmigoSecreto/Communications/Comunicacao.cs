@@ -30,30 +30,33 @@ namespace Academia.DotNet.AmigoSecreto.Communications
             if (listaDeAmigos.Count < 2)
             {
                 Console.WriteLine("Não há amigos suficientes para gerar amigos secretos.");
-                return null;
+                return new List<Tuple<Amigo, Amigo>>();
             }
-
-            List<Amigo> amigosEmbaralhados = listaDeAmigos.ToList();
-            Random random = new Random();
-
-            List<Tuple<Amigo, Amigo>> paresAmigosSecretos = new List<Tuple<Amigo, Amigo>>();
-
-            while (amigosEmbaralhados.Count > 0)
+            else 
             {
-                Amigo amigo = amigosEmbaralhados[0];
-                amigosEmbaralhados.RemoveAt(0);
+                List<Amigo> amigosEmbaralhados = listaDeAmigos.ToList();
+                Random random = new Random();
 
-                int indexAmigoSecreto = random.Next(0, amigosEmbaralhados.Count);
-                Amigo amigoSecreto = amigosEmbaralhados[indexAmigoSecreto];
-                amigosEmbaralhados.RemoveAt(indexAmigoSecreto);
+                List<Tuple<Amigo, Amigo>> paresAmigosSecretos = new List<Tuple<Amigo, Amigo>>();
 
-                paresAmigosSecretos.Add(new Tuple<Amigo, Amigo>(amigo, amigoSecreto));
+                while (amigosEmbaralhados.Count > 0)
+                {
+                    Amigo amigo = amigosEmbaralhados[0];
+                    amigosEmbaralhados.RemoveAt(0);
+
+                    int indiceAmigoSecreto = random.Next(0, amigosEmbaralhados.Count);
+                    Amigo amigoSecreto = amigosEmbaralhados[indiceAmigoSecreto];
+                    amigosEmbaralhados.RemoveAt(indiceAmigoSecreto);
+
+                    paresAmigosSecretos.Add(new Tuple<Amigo, Amigo>(amigo, amigoSecreto));
+                }
+
+                Persistencia persistencia = new Persistencia();
+                persistencia.SalvarParesAmigosSecretos(paresAmigosSecretos);
+
+                return paresAmigosSecretos;
             }
-
-            Persistencia persistencia = new Persistencia();
-            persistencia.SalvarParesAmigosSecretos(paresAmigosSecretos);
-
-            return paresAmigosSecretos;
+            
         }
     }
 }

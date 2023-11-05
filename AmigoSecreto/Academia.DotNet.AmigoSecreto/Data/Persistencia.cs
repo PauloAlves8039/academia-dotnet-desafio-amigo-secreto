@@ -86,7 +86,8 @@ namespace Academia.DotNet.AmigoSecreto.Data
             {
                 foreach (var par in paresAmigosSecretos)
                 {
-                    streamWriter.WriteLine($"{par.Item1.Nome};{par.Item2.Nome}");
+                    string linha = $"{par.Item1.Nome};{par.Item1.Email};{par.Item2.Nome};{par.Item2.Email}";
+                    streamWriter.WriteLine(linha);
                 }
             }
 
