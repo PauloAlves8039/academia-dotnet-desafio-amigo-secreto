@@ -25,7 +25,7 @@ Fiz a criação de pastas visando uma organização na estrutura do projeto, cad
 
 ## :floppy_disk: Clonar Repositório
 
-```git clone https://github.com/PauloAlves8039/academia-dotnet-exercicio-padel.git```
+```git clone https://github.com/PauloAlves8039/academia-dotnet-desafio-amigo-secreto.git```
 
 ## Author
 :boy: [Paulo Alves](https://github.com/PauloAlves8039)
