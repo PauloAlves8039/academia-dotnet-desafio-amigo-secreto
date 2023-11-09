@@ -10,12 +10,16 @@ Repositório com desafio em C# para gerenciar lista de amigos secretos, este pro
 
 ## :white_check_mark: Decisões Técnicas
 
-Fiz a criação de pastas visando uma organização na estrutura do projeto, cada pasta represeta a definição de cada uma das classes utilizadas:
+1. Os arquivos estão salvos no projeto nas pastas `Data/Files/amigos.csv` e `Data/Files/secretos.csv`, mesmo que eles sejam excluídos ao executar o projeto e realizar o cadastro e geração da lista de amigos secretos eles seram salvos nessas pastas.
+
+2. Procurei manter a divisão dos nomes e emails usando `;` confome instruções na descrição do enunciado. 
+
+3. Fiz a criação de pastas visando uma organização na estrutura do projeto, cada pasta representa a definição de cada uma das classes utilizadas:
 
 - <b>Communications</b>: nesta pasta é armazenada a classe `Comunicacao` que possui métodos responsáveis pela regra de negócio da aplicação.
-- <b>Models</b>: essa pasta é responsável por armazenar as classes de modelo, nela foi criada a classe `Amigo`.
-- <b>Data</b>: essa pasta é responsável por armazenar as classes que atuam com persistência de dados, foi criada a classe `Persistencia` para manipular os dados.
-- <b>Files</b>: essa pasta armazena os arquivos `amigos.csv` que define a lista dos amigos e `secretos.csv` que geram os pares de amigos secretos.
+- <b>Models</b>: essa pasta é responsável por armazenar a classe de modelo `Amigo`, o objetivo é representar a entidade Amigo.
+- <b>Data</b>: essa pasta é responsável por armazenar a classe que atua com a persistência de dados, foi criada a classe `Persistencia` com esse propósito.
+- <b>Data/Files</b>: essas pastas armazenam os arquivos `amigos.csv` que definem a lista dos amigos e `secretos.csv` que geram os pares de amigos secretos.
 - <b>Utils</b>: esta pasta contem a classe `Utilitario`, o seu objetivo é definir métodos auxiliares para as validações das propriedades.
 
 ## ✔️ Recursos Utilizados
