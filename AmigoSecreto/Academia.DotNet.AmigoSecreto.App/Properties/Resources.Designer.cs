@@ -73,6 +73,36 @@ namespace Academia.DotNet.AmigoSecreto.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap amiga {
+            get {
+                object obj = ResourceManager.GetObject("amiga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap amigos {
+            get {
+                object obj = ResourceManager.GetObject("amigos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap amigos_secretos {
+            get {
+                object obj = ResourceManager.GetObject("amigos-secretos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brush3 {
             get {
                 object obj = ResourceManager.GetObject("brush3", resourceCulture);
@@ -116,6 +146,16 @@ namespace Academia.DotNet.AmigoSecreto.App.Properties {
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixo {
+            get {
+                object obj = ResourceManager.GetObject("lixo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
