@@ -11,13 +11,13 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+# [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 x64/
 build/
 bld/
-[Bb]in/
+# [Bb]in/
 [Oo]bj/
 
 # MSTest test Results
@@ -40,7 +40,7 @@ dlldata.c
 *.meta
 *.obj
 *.pch
-*.pdb
+#*.pdb
 *.pgc
 *.pgd
 *.rsp
