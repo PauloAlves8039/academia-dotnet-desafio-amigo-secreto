@@ -5,15 +5,8 @@ namespace Academia.DotNet.AmigoSecreto.Data
 {
     public class Persistencia
     {
-        private string diretorioDoProjeto;
-        private string localizacao = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        private string caminhoDoArquivoAmigos => Path.Combine(diretorioDoProjeto, @"..\..\..\Data\Files\amigos.csv");
-        private string caminhoDoArquivoSecretos => Path.Combine(diretorioDoProjeto, @"..\..\..\Data\Files\secretos.csv");
-
-        public Persistencia()
-        {
-            diretorioDoProjeto = localizacao;
-        }
+        public string caminhoDoArquivoAmigos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "amigos.csv");
+        public string caminhoDoArquivoSecretos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "secretos.csv");
 
         public List<Amigo> LerAmigosDoArquivo()
         {
