@@ -10,7 +10,7 @@ Repositório com projeto `Console Application` usando a linguagem `C#` para gere
 
 ## :white_check_mark: Decisões Técnicas
 
-1. Os arquivos `amigos.csv` e `secretos.csv` estão salvos no projeto na pasta padrão `bin\Debug\net6.0`, optei em manter essa estrutura para futuras implementação caso seja necessário.
+1. Os arquivos `amigos.csv` e `secretos.csv` estão salvos no projeto na pasta padrão `bin\Debug\net6.0`, optei em manter essa estrutura para futuras implementações caso seja necessário.
 
 2. Procurei manter a divisão dos nomes e emails usando `;` confome instruções na descrição do enunciado. 
 
@@ -29,6 +29,11 @@ Repositório com projeto `Console Application` usando a linguagem `C#` para gere
 ## :floppy_disk: Clonar Repositório
 
 ```git clone https://github.com/PauloAlves8039/academia-dotnet-desafio-amigo-secreto.git```
+
+## :camera: Screenshot
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/academia-dotnet-desafio-amigo-secreto/blob/master/AmigoSecreto/Academia.DotNet.AmigoSecreto/assets/images/screenshot.PNG" /></p>
+
 
 ## Author
 :boy: [Paulo Alves](https://github.com/PauloAlves8039)
