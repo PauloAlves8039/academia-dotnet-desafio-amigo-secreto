@@ -5,8 +5,8 @@ namespace Academia.DotNet.AmigoSecreto.Data
 {
     public class Persistencia
     {
-        public string caminhoDoArquivoAmigos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "amigos.csv");
-        public string caminhoDoArquivoSecretos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "secretos.csv");
+        private string caminhoDoArquivoAmigos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "amigos.csv");
+        private string caminhoDoArquivoSecretos => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "secretos.csv");
 
         public List<Amigo> LerAmigosDoArquivo()
         {
