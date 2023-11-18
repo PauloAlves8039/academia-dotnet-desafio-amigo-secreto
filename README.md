@@ -2,11 +2,19 @@
 
 ## :computer: Projeto
 
-Repositório com projeto `Console Application` usando a linguagem `C#` para gerenciar lista de amigos secretos, este projeto tem com propósito realizar o cadastro, exibição da lista de amigos e formar os pares do amigo secreto. O desafio foi proposto durante a Academia .NET ministrada pela `Universidade Franciscana - UFN`.
+Repositório com solução de desafio para gerenciar listas relacionadas a realização de um amigo secreto, este projeto tem como propósito criar a formarção dos pares do amigo secreto. O desafio foi proposto durante a Academia DotNet ministrada pela `Universidade Franciscana - UFN`.
 
 ## :page_facing_up: Desafio
 
 [Descrição do Desafio](https://github.com/ricardosma/academia_DotNet_5/blob/main/anotacoesAlexandre/aulas.md)
+
+## :scroll: Funcionalidades
+
+Essa aplicação permite ao usuário:
+
+- Cadastrar `Nome` e `Email` dos amigos que vão participar do `Amigo Secreto`.
+- Visualizar duas listas: `amigos cadastrados` e `pares dos amigos`.
+- Gerar o sorteio aleatório dos pares dos amigos.
 
 ## :white_check_mark: Decisões Técnicas
 
@@ -24,6 +32,7 @@ Repositório com projeto `Console Application` usando a linguagem `C#` para gere
 ## ✔️ Recursos Utilizados
 
 - ``.NET 6.0``
+- ``Console Application``
 - ``C#``
 
 ## :floppy_disk: Clonar Repositório
