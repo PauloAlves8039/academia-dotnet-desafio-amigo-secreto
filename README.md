@@ -24,6 +24,7 @@ Essa aplicação permite ao usuário:
 - Cadastrar `Nome` e `Email` dos amigos que vão participar do `Amigo Secreto`.
 - Visualizar duas listas: `amigos cadastrados` e `pares dos amigos`.
 - Gerar o sorteio aleatório dos pares dos amigos.
+- Limpar as listas dos amigos cadastrados e dos pares de amigos.
 
 ## :white_check_mark: Decisões Técnicas
 
