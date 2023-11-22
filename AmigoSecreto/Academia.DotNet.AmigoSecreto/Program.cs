@@ -19,7 +19,8 @@ internal class Program
             Console.WriteLine("*   1 - Cadastrar amigo        *");
             Console.WriteLine("*   2 - Listar amigos          *");
             Console.WriteLine("*   3 - Gerar amigo secreto    *");
-            Console.WriteLine("*   4 - Sair                   *");
+            Console.WriteLine("*   4 - Limpar arquivos        *");
+            Console.WriteLine("*   5 - Sair                   *");
             Console.WriteLine("********************************");
 
             Console.Write("\nOpção: ");
@@ -82,14 +83,17 @@ internal class Program
                     if (paresAmigosSecretos != null)
                     {
                         Console.WriteLine("\nPares de Amigos Secretos:\n");
-                        foreach (var par in paresAmigosSecretos)
-                        {
-                            Console.WriteLine($"{par.Item1.Nome} -> {par.Item2.Nome}");
-                        }
+                        persistencia.LerParesDosAmigosSecretos();
                     }
                     break;
 
                 case "4":
+                    Console.WriteLine("\nLimpando as Listas!\n");
+                    amigos.Clear();
+                    persistencia.LimparConteudoDosArquivos();
+                    break;
+
+                case "5":
                     sair = true;
                     break;
 

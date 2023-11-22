@@ -23,6 +23,11 @@ namespace Academia.DotNet.AmigoSecreto.Data
                         listaDeAmigos.Add(new Amigo(dados[0], dados[1]));
                     }
                 }
+
+                if (listaDeAmigos.Count == 0)
+                {
+                    Console.WriteLine("Aviso: A lista de amigos está vazia.");
+                }
             }
 
             return listaDeAmigos;
@@ -46,7 +51,7 @@ namespace Academia.DotNet.AmigoSecreto.Data
             Console.WriteLine("O amigo foi adicionado no arquivo: amigos");
         }
 
-        public List<Tuple<Amigo, Amigo>> LerParesAmigosSecretos()
+        public List<Tuple<Amigo, Amigo>> LerParesDosAmigosSecretos()
         {
             List<Tuple<Amigo, Amigo>> paresAmigosSecretos = new List<Tuple<Amigo, Amigo>>();
 
@@ -58,17 +63,32 @@ namespace Academia.DotNet.AmigoSecreto.Data
                     {
                         string linha = streamReader.ReadLine();
                         string[] dados = linha.Split(';');
-                        Amigo amigo1 = new Amigo(dados[0], "");
-                        Amigo amigo2 = new Amigo(dados[1], "");
-                        paresAmigosSecretos.Add(new Tuple<Amigo, Amigo>(amigo1, amigo2));
+
+                        if (dados.Length >= 4)
+                        {
+                            Amigo amigoEsquerdo = new Amigo(dados[0], dados[1]);
+                            Amigo amigoDireito = new Amigo(dados[2], dados[3]);
+
+                            paresAmigosSecretos.Add(new Tuple<Amigo, Amigo>(amigoEsquerdo, amigoDireito));
+                        }
+                        else
+                        {
+                            Console.WriteLine("Aviso: Arquivo com dados insuficientes.");
+                        }
                     }
                 }
+            }
+
+            foreach (var par in paresAmigosSecretos)
+            {
+                Console.WriteLine($"{par.Item1.Nome} -> {par.Item2.Nome}");
             }
 
             return paresAmigosSecretos;
         }
 
-        public void SalvarParesAmigosSecretos(List<Tuple<Amigo, Amigo>> paresAmigosSecretos)
+
+        public void SalvarParesDosAmigosSecretos(List<Tuple<Amigo, Amigo>> paresAmigosSecretos)
         {
             if (!Directory.Exists(Path.GetDirectoryName(caminhoDoArquivoSecretos)))
             {
@@ -84,7 +104,24 @@ namespace Academia.DotNet.AmigoSecreto.Data
                 }
             }
 
-            Console.WriteLine("Os amigos secretos foram adicionados no arquivo: segredos");
+            Console.WriteLine("Os amigos secretos foram adicionados no arquivo: secretos");
+        }
+
+        public void LimparConteudoDosArquivos()
+        {
+            LimparConteudoDoArquivo(caminhoDoArquivoAmigos);
+            LimparConteudoDoArquivo(caminhoDoArquivoSecretos);
+        }
+
+        private void LimparConteudoDoArquivo(string caminhoArquivo)
+        {
+            if (File.Exists(caminhoArquivo))
+            {
+                using (StreamWriter writer = new StreamWriter(caminhoArquivo))
+                {
+                    writer.Write(string.Empty);
+                }
+            }
         }
     }
 }

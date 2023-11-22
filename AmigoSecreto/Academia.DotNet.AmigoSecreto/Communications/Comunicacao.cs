@@ -7,6 +7,7 @@ namespace Academia.DotNet.AmigoSecreto.Communications
     public class Comunicacao
     {
         private List<Amigo> listaDeAmigos;
+        Persistencia persistencia = new Persistencia();
 
         public Comunicacao(List<Amigo> amigos)
         {
@@ -22,6 +23,7 @@ namespace Academia.DotNet.AmigoSecreto.Communications
 
         public List<Amigo> ListarAmigos()
         {
+            persistencia.LerAmigosDoArquivo();
             return listaDeAmigos;
         }
 
@@ -29,7 +31,7 @@ namespace Academia.DotNet.AmigoSecreto.Communications
         {
             if (listaDeAmigos.Count < 2)
             {
-                Console.WriteLine("Não há amigos suficientes para gerar amigos secretos.");
+                Console.WriteLine("\nNão há amigos suficientes para gerar amigos secretos.");
                 return new List<Tuple<Amigo, Amigo>>();
             }
             else 
@@ -51,8 +53,7 @@ namespace Academia.DotNet.AmigoSecreto.Communications
                     paresAmigosSecretos.Add(new Tuple<Amigo, Amigo>(amigo, amigoSecreto));
                 }
 
-                Persistencia persistencia = new Persistencia();
-                persistencia.SalvarParesAmigosSecretos(paresAmigosSecretos);
+                persistencia.SalvarParesDosAmigosSecretos(paresAmigosSecretos);
 
                 return paresAmigosSecretos;
             }
